@@ -17,7 +17,7 @@ import re
 def clean_text(text):
     cleaned_text = re.sub(r"[^\w\s]", "", text)
     cleaned_text = re.sub(r"\s+", " ", cleaned_text).strip()
-    return cleaned_text
+    return cleaned_text.capitalize()
 
 """
 ~Once a username is entered, requests will get the url and then a loop will occur that increases the page number at the end until no more pages are found/no more character elements are found.
@@ -64,5 +64,5 @@ def get_characters(username):
 
 
 #User types in account name to scrape
-username = input("Enter username: ")
+username = input("Enter username:")
 get_characters(username)
